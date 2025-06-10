@@ -8,7 +8,7 @@ const NavBar: React.FC = () => {
     const router = useRouter();
     
     const handleSignIn = () => {
-         router.push('/sign-in');
+         router.push('/login');
     }
     const handleSignUp = () => {
         return router.push('/signup');
