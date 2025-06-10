@@ -6,8 +6,7 @@ export const useStyles = createStyles({
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 4rem;
-    `
+        margin-top: 4rem;`
     ,
     Form: css`
         background-color: #ffffff;
@@ -24,15 +23,12 @@ export const useStyles = createStyles({
     `,
     Submit: css`
         background-color: black;
-
     `,
     FormItems: css`
         display: block;
         justify-items: center;
-
     `,
     Input: css `
         width: 20rem;
     `
-
 })

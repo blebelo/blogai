@@ -65,6 +65,7 @@ const SignUp: React.FC = () => {
                         <Input className={styles.Input}/>
                     </Form.Item>
 
+
                     <label>Password</label>
                     <Form.Item<FieldType>
                         name="password"
@@ -84,7 +85,7 @@ const SignUp: React.FC = () => {
 
                 <Form.Item>
                     <Button type="primary" htmlType="submit" className={styles.Submit}>
-                        Submit
+                        Sign Up
                     </Button>
                 </Form.Item>
             </Form>
