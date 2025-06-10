@@ -1,8 +1,19 @@
 import Image from "next/image";
 import styles from "./styles/NavBar.module.css";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const NavBar: React.FC = () => {
+
+    const router = useRouter();
+    
+    const handleSignIn = () => {
+         router.push('/sign-in');
+    }
+    const handleSignUp = () => {
+        return router.push('/signup');
+    }
+
     return (
         <div className={styles.navbar}>
             <Image
@@ -15,8 +26,8 @@ const NavBar: React.FC = () => {
             />
 
             <div className={styles.buttons}>
-                <button className={styles.login}>Sign In</button>
-                <button className={styles.register}>Register</button>
+                <button onClick={handleSignIn} className={styles.login}>Sign In</button>
+                <button onClick={handleSignUp} className={styles.register}>Register</button>
             </div>
         </div>
     )
