@@ -40,6 +40,14 @@ const SignUp: React.FC = () => {
             >
                 <Typography className={styles.Typography}>Sign Up</Typography>
                 <div className={styles.FormItems}>
+                    <label>Name</label>
+
+                    <Form.Item<FieldType>
+                        name="name"
+                        rules={[{ required: true, message: 'Please input your name' }]}
+                    >
+                        <Input className={styles.Input}/>
+                    </Form.Item>
 
                     <label>Email</label>
                     <Form.Item<FieldType>
@@ -49,6 +57,15 @@ const SignUp: React.FC = () => {
                         <Input  className={styles.Input}/>
                     </Form.Item>
 
+                    <label>Age</label>
+                    <Form.Item<FieldType>
+                        name="age"
+                        rules={[{ required: true, message: 'Please input your age' }]}
+                    >
+                        <Input className={styles.Input}/>
+                    </Form.Item>
+
+
                     <label>Password</label>
                     <Form.Item<FieldType>
                         name="password"
@@ -57,11 +74,18 @@ const SignUp: React.FC = () => {
                         <Input.Password className={styles.Input}/>
                     </Form.Item>
                     
+                    <label>Confirm Password</label>
+                    <Form.Item<FieldType>
+                        name="confirmPassword"
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input.Password className={styles.Input}/>
+                    </Form.Item>
                 </div>
 
                 <Form.Item>
                     <Button type="primary" htmlType="submit" className={styles.Submit}>
-                        Sign In
+                        Sign Up
                     </Button>
                 </Form.Item>
             </Form>

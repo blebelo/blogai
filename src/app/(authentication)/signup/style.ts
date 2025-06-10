@@ -1,15 +1,13 @@
-import { createStyles, css } from 'antd-style';
+import {createStyles,css} from 'antd-style';
 
 export const useStyles = createStyles({
-
     Container: css`
         background-color: #fffff;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 4rem;
-    ` ,
-
+        margin-top: 4rem;`
+    ,
     Form: css`
         background-color: #ffffff;
         padding: 2rem;
@@ -30,7 +28,7 @@ export const useStyles = createStyles({
         display: block;
         justify-items: center;
     `,
-    Input: css`
+    Input: css `
         width: 20rem;
     `
 })
