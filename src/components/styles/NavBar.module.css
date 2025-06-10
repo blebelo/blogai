@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: inherit;
+    border: none;
+}
+
+.register{
+  background-color: black;   
+  color: white; 
+  padding: 0.7rem;
+  margin: 0.3rem;
+  border-radius: 1rem;
+  transition: transform 0.6s ease;
+}
+
+.login{   
+  border: black 0.1 solid; 
+  background-color: rgb(201, 201, 201);
+  padding: 0.7rem;
+  margin: 0.3rem;
+  border-radius: 1rem;
+  transition: transform 0.6s ease;
+}
+
+.login:hover,
+.register:hover {
+    cursor: pointer;
+    transform: scale(1.07);
+}
+
