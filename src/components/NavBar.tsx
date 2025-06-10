@@ -20,8 +20,8 @@ const NavBar: React.FC = () => {
             className={styles.logo}
             src="/blog-ai_logo.png"
             alt="Blog AI logo"
-            width={150}
-            height={150}
+            width={100}
+            height={100}
             priority
             />
 
