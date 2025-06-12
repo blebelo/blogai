@@ -3,26 +3,28 @@ import React from "react";
 import type { FormProps } from "antd";
 import { Button, Form, Input, Typography } from 'antd';
 import { useStyles } from "./style";
+import { IUser } from "@/providers/authProvider/context";
+import { useUserActions } from "@/providers/authProvider";
 
 
 const SignUp: React.FC = () => {
 
     const {styles} = useStyles()
+    const {createUser} = useUserActions();
 
-    type FieldType = {
-        email: string,
-        name: string,
-        age: number,
-        password: string,
-        confirmPassword: string
-
-    }
-
-    const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+    const onFinish: FormProps<IUser>['onFinish'] = (values) => {
         console.log('Success:', values);
+        const user: IUser = {
+            email: values.email,
+            name: values.name,
+            age: values.age,
+            password: values.password
+        }
+        createUser(user);
+
     };
 
-    const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+    const onFinishFailed: FormProps<IUser>['onFinishFailed'] = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
 
@@ -42,7 +44,7 @@ const SignUp: React.FC = () => {
                 <div className={styles.FormItems}>
                     <label>Name</label>
 
-                    <Form.Item<FieldType>
+                    <Form.Item<IUser>
                         name="name"
                         rules={[{ required: true, message: 'Please input your name' }]}
                     >
@@ -50,7 +52,7 @@ const SignUp: React.FC = () => {
                     </Form.Item>
 
                     <label>Email</label>
-                    <Form.Item<FieldType>
+                    <Form.Item<IUser>
                         name="email"
                         rules={[{ required: true, message: 'Please input your email' }]}
                     >
@@ -58,7 +60,7 @@ const SignUp: React.FC = () => {
                     </Form.Item>
 
                     <label>Age</label>
-                    <Form.Item<FieldType>
+                    <Form.Item<IUser>
                         name="age"
                         rules={[{ required: true, message: 'Please input your age' }]}
                     >
@@ -67,7 +69,7 @@ const SignUp: React.FC = () => {
 
 
                     <label>Password</label>
-                    <Form.Item<FieldType>
+                    <Form.Item<IUser>
                         name="password"
                         rules={[{ required: true, message: 'Please input your password!' }]}
                     >
@@ -75,8 +77,8 @@ const SignUp: React.FC = () => {
                     </Form.Item>
                     
                     <label>Confirm Password</label>
-                    <Form.Item<FieldType>
-                        name="confirmPassword"
+                    <Form.Item<IUser>
+                        name="password"
                         rules={[{ required: true, message: 'Please input your password!' }]}
                     >
                         <Input.Password className={styles.Input}/>
