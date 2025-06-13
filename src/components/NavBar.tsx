@@ -24,7 +24,6 @@ const NavBar: React.FC = () => {
             height={100}
             priority
             />
-
             <div className={styles.buttons}>
                 <button onClick={handleSignIn} className={styles.login}>Sign In</button>
                 <button onClick={handleSignUp} className={styles.register}>Register</button>
