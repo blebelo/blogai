@@ -21,16 +21,13 @@ const SignUp: React.FC = () => {
             password: values.password
         }
         createUser(user);
-
     };
 
     const onFinishFailed: FormProps<IUser>['onFinishFailed'] = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
 
-
     return (
-
         <div className={styles.Container}>
             <Form
                 name="basic"
